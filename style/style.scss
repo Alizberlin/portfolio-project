@@ -7,6 +7,7 @@
 :root{
     --color-primary: #191d2b;
     --color-secondary: #27AE60;
+    --color-light-secondary: #6ccd94;
     --color-white: #FFFFFF;
     --color-black: #000;
     --color-grey0: #f8f8f8;
@@ -44,51 +45,51 @@ section{
     position: absolute;
     left: 0;
     top: 0;
-    padding: 3rem 18rem;
+    padding: 2rem 7rem;
 
 }
 
 .section{
-    transform: translateY(-100%) scale(0);
+    transform: translateX(-100%) scale(0);
     transition: all .4s ease;
     background-color: var(--color-primary);
 }
 
 .sec1{
     display: none;
-    transform: translateY(0) scale(1);
+    transform: translateX(0) scale(1);
     
 
 }
 .sec2{
     display: none;
-    transform: translateY(0) scale(1);
+    transform: translateX(0) scale(1);
     
 }
 .sec3{
     display: none;
-    transform: translateY(0) scale(1);
+    transform: translateX(0) scale(1);
 
 }
 .sec4{
     display: none;
-    transform: translateY(0) scale(1);
+    transform: translateX(0) scale(1);
 
 }
 .sec5{
     display: none;
-    transform: translateY(0) scale(1);
+    transform: translateX(0) scale(1);
 
 }
 .active{
     display: block;
-    animation: ScaleAnimation 1s ease-in-out;
+    animation: ScaleAnimation 1.3s ease-in-out;
     @keyframes ScaleAnimation {
         0%{
-            transform: translateX(-100%) scale(0);
+            transform: translateX(-50%);
         }
         100%{
-            transform: translateX(0%) scale(1);
+            transform: translateX(0%);
         }
         
     }
@@ -128,6 +129,13 @@ section{
             color: var(--color-grey-2);
             pointer-events: none;
         }
+        &:hover{
+            background-color: var(--color-light-secondary);
+            transition: all .4s ease-in-out;
+            i{
+                color: var(--color-grey-5);
+            }
+        }
 
     }
 }
@@ -165,9 +173,19 @@ section{
                 height: 100%;
                 object-fit: cover;
                 transition: all .4s ease-in-out;
-                filter: grayscale(100%);
+            border-radius: var(--br-sm-2);
+
+                filter: grayscale(20%);
                 &:hover{
                     filter: grayscale(0%);
+            border-radius: var(--br-sm-2);
+
+                }
+                &:hover{
+                    background-color: var(--color-primary);
+                    border: 2px solid var(--color-light-secondary);
+            border-radius: var(--br-sm-2);
+            box-shadow: 1px 2px 14px var(--color-light-secondary);
                 }
             }
         }
@@ -384,17 +402,120 @@ section{
         position: relative;
         &::before{
             content: '';
-            position: relative;
-            left: 5%;
+            position: absolute;
+            left: 50%;
             top: 0%;
-            width: 100%;
-            height: 100px;
-            background-color: white;
+            width: 50%;
+            height: 2px;
+            background-color: var(--color-grey-5);
+            transform: translateX(-50%);
             
         }
 }
 }
 
+
+// Portfolio *******************
+
+.port-text{
+    padding: 2rem 0;
+    text-align: center;
+
+}
+
+.portfolios{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 3rem;
+    .portfolio-item{
+        position: relative;
+        padding: 0.5rem;
+        img{
+            width: 100%;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+        .hover-item{
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-secondary);
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.4s ease-in-out;
+            h3{
+                font-size: 1.5rem;
+                color: var(--color-white);
+                margin-bottom: 1.5rem;
+            }
+            .icons{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .icon{
+                    background-color: var(--color-primary);
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 1rem;
+                    cursor: pointer;
+                    transition: all .5s ease-in-out;
+                    i{
+                        font-size: 1.5rem;
+                        color: var(--color-white);
+                        margin: 0 1rem;
+                    }
+                    &:hover{
+                        background-color: var(--color-grey-3);
+                        i{
+                            color: var(--color-primary);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.portfolio-item:hover .hover-item{
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+// blogs *************************
+
+.blogs{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 3rem;
+    .blog{
+        position: relative;
+        background-color: var(--color-grey-5);
+        border-radius: 5px;
+        box-shadow: 1px 1px 20px rgba(0,0,0,0.1);
+        transition: all 0.4s ease-in-out;
+        &:hover{
+        box-shadow: 1px 1px 20px rgba(0,0,0,0.3);
+            transform: translateY(-5px);
+            transition: all .4s ease-in-out;
+            img{
+                filter: grayscale(0);
+                transform: scale(1.1);
+                box-shadow: 1px 4px 20px rgba(0,0,0,0.8);
+            }
+        }
+    }
+}
 
 // independent components
 .btn-container{
