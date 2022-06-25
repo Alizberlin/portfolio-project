@@ -20,6 +20,23 @@
     --br-sm-2: 14px;
     --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
 }
+.light-mode{
+    --color-primary: #FFFFFF;
+    --color-secondary: #388080;
+    --color-light-secondary: #62baba;
+    --color-white: #191d2b;
+    --color-black: #000;
+    --color-grey0: #f8f8f8;
+    --color-grey-1: #8d9196;
+    --color-grey-2: #808388;
+    --color-grey-3: #bcc2c9;
+    --color-grey-4: #acb2b8;
+    --color-grey-5: #cbd0d8;
+    --color-grey-6: #8d9196;
+    --br-sm-2: 14px;
+    --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
+
+}
 body{
     background-color: var(--color-primary);
     font-family: 'Libre Baskerville','Poppins', sans-serif;
@@ -36,7 +53,7 @@ a{
 header{
     height: 100vh;
     color: var(--color-white);
-    overflow: hidden;
+    padding: 2rem;
 }
 
 section{
@@ -140,6 +157,59 @@ section{
     }
 }
 
+.theme-btn{
+    position: fixed;
+
+    top: 1%;
+    left: 0.5%;
+    padding: 1rem;
+    cursor: pointer;
+    background-color: var(--color-grey-4);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .7rem;
+    box-shadow: 0 3px 15px rgba(0,0,0,.3);
+    transition: all .6s ease;
+    &:active{
+        transform: translateY(-5px);
+    }
+    i{
+        font-size: 1.2rem;
+        color: var(--color-grey-2);
+        pointer-events: none;
+    }
+}
+
+.burger-menu{
+    position: fixed;
+    top: 1%;
+    right: .5%;
+    padding: 1rem;
+    cursor: pointer;
+    background-color: var(--color-grey-4);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: .7rem;
+    box-shadow: 0 3px 15px rgba(0,0,0,.3);
+    transition: all .6s ease;
+    &:active{
+        transform: translateY(-5px);
+    }
+    i{
+        font-size: .9rem;
+        color: var(--color-grey-2);
+        pointer-events: none;
+    }
+}
+
 // header component
 .header-content{
     display: grid;
@@ -197,6 +267,9 @@ section{
         flex-direction: column;
         justify-content: center;
         padding-right: 8rem;
+        .h-name{
+            padding: 1.5rem;
+        }
         .name{
             font-size: 3rem;
             color: var(--color-secondary);
@@ -718,3 +791,5 @@ section{
         }
     }
 }
+
+@import './_media' ;
