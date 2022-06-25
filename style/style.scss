@@ -35,8 +35,8 @@
     --color-grey-6: #8d9196;
     --br-sm-2: 14px;
     --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
-
 }
+
 body{
     background-color: var(--color-primary);
     font-family: 'Libre Baskerville','Poppins', sans-serif;
@@ -156,6 +156,10 @@ section{
 
     }
 }
+.hide{
+    display: none;
+    transition: all .4s ease;
+}
 
 .theme-btn{
     position: fixed;
@@ -186,6 +190,7 @@ section{
 
 .burger-menu{
     position: fixed;
+    z-index: 11;
     top: 1%;
     right: .5%;
     padding: 1rem;
