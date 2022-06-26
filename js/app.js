@@ -3,6 +3,8 @@ const secBtns = document.querySelectorAll('.controls');
 const secBtn = document.querySelectorAll('.control');
 const allSections = document.querySelector('.main-content');
 const controls = document.querySelector('.controls');
+const contactBtn = document.querySelector('.contact-me-btn');
+const contactPage = document.querySelector('.contact');
 let toggle = false;
 if(window.innerWidth < 601){
     toggle = true
@@ -72,6 +74,12 @@ menu.addEventListener('click', ()=> {
     controls.classList.toggle('hide');
 })
 
+// contact me button
+contactBtn.addEventListener('click', ()=> {
+
+    contactPage.classList.add('active');
+
+})
 
 }
 
