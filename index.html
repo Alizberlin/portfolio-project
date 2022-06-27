@@ -14,7 +14,7 @@
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body class="main-content">
-    <header class="section sec1 header active" id="home" >
+    <header class="section sec1 header" id="home" >
         <div class="header-content">
             <div class="left-header">
                 <div class="h-shape"></div>
@@ -366,7 +366,7 @@
                 </div>
             </div>
         </section>
-        <section class="section sec5 contact" id="contact" >
+        <section class="section sec5 contact  active" id="contact" >
             <div class="contact-container">
                 <div class="main-title">
                     <h2>
@@ -418,24 +418,29 @@
                         </div>
                     </div>
                     <div class="right-contact">
-                        <form action="" class="contact-form">
+                        <form action="submit" class="contact-form" id="contact-form" method="post">
                             <div class="input-control i-c-2">
-                                <input type="text" required placeholder="Your Name">
-                                <input type="email" required placeholder="Your Email">
+                                <input type="text" id="c-name" name="user_name" required placeholder="Your Name">
+                                <input type="email" id="c-email" name="user_email" required placeholder="Your Email">
                             </div>
                             <div class="input-control">
-                                <input type="text" required placeholder="Subject">
+                                <input type="text" id="c-info" required placeholder="Subject" value="Information">
                             </div>
                             <div class="input-control">
-                                <textarea name="" id="" cols="15" rows="8" placeholder="Message here..."></textarea>
+                                <textarea name="message" id="c-message" cols="15" rows="8" placeholder="Message here..." required></textarea>
                             </div>
                             <div class="submit-btn">
-                                <a href="#" class="main-btn">
-                                    <span class="btn-text">Send</span>
-                                    <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
-                                </a>
+                                <button class="send-btn">
+                                    <span type="submit" value="Send" class="btn-text">Send</span>
+                                    <span class="btn-icon"><i class="fa-solid fa-paper-plane"></i></span>
+                                </button>
+                                </span>
                             </div>
                         </form>
+                        <div class="message">
+                            <p class="success hidden">Message Received Thank You!</p>
+                            <p class="fail hidden">Something went Wrong!</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -456,5 +461,54 @@
         <i class="fa-solid fa-bars"></i>
     </div>
     <script src="js/app.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('DkbTMDWUtCexhQDtO');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            const successP = document.querySelector('.success');
+            const failP = document.querySelector('.fail');
+
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                //this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('service_i3qadmm', 'template_nty8mmk', this)
+                    .then(function() {
+                        successP.classList.remove('hidden');
+                        successP.classList.add('show');
+                        console.log('SUCCESS!');
+                        const successTimeout = setTimeout(clearFields, 4000);
+                        function clearFields() {
+                            successP.classList.remove('show');
+                        successP.classList.add('hidden');
+                        }
+                    }, function(error) {
+                        failP.classList.remove('hidden');
+                        failP.classList.add('show');
+                        console.log('FAILED...', error);
+                        const failTimeout = setTimeout(clearFields, 4000);
+                        function clearFields() {
+                            failP.classList.remove('show');
+                        failP.classList.add('hidden');
+                        }
+                    });
+            });
+        }
+//         Hello {{to_name}},
+
+// You got a new message from {{from_name}}:
+
+// {{message}}
+
+// Best wishes,
+// EmailJS team
+    </script>
+
 </body>
 </html>

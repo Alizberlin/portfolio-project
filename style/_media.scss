@@ -144,6 +144,15 @@
         padding-top: 1.5rem;
         .left-contact{
             flex: 1;
+            .contact-info{
+                .contact-item{
+                    flex-direction: column;
+                    font-size: .6rem;
+                    p{
+                        font-size: .6rem;
+                    }
+                }
+            }
             h4{
                 display: none;
             }
@@ -160,6 +169,16 @@
             margin-left: 0;
             .contact-form{
                 font-size: .7rem;
+            }
+            .message{
+                padding: 2rem 0;
+                width: 100%;
+                p{
+                    width: 100%;
+                    padding: 1rem 0;
+                    font-size: .6rem;
+                    font-weight: 300;
+                }
             }
         }
         

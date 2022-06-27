@@ -5,7 +5,15 @@ const allSections = document.querySelector('.main-content');
 const controls = document.querySelector('.controls');
 const contactBtn = document.querySelector('.contact-me-btn');
 const contactPage = document.querySelector('.contact');
+const contactMail = document.querySelector('#c-email');
+const contactName = document.querySelector('#c-name');
+const contactInfo = document.querySelector('#c-info');
+const contactMessage = document.querySelector('#c-message');
+const sendButton = document.querySelector('#submit');
 let toggle = false;
+
+console.log(contactMail.value);
+
 if(window.innerWidth < 601){
     toggle = true
 }
@@ -84,3 +92,26 @@ contactBtn.addEventListener('click', ()=> {
 }
 
 pageTransition();
+
+// Email sender
+
+//sendButton.addEventListener('click', ()=> sendEmail())
+
+function sendEmail() {
+    emailjs.init('DkbTMDWUtCexhQDtO');
+    emailjs.sendForm('contact_service', 'contact_form', this)
+	// Email.send({
+	// Host: "smtp.zoho.eu",
+	// Username : "admin@learn-to.codes",
+	// Password : "ZpAbyvpsefX5",
+	// To : 'mrakaraza@gmail.com',
+	// From : contactMail.value,
+	// Subject : "Email from your website",
+	// Body : `<h1>${contactMessage.value}</h1> <p><strong>Name:</strong> ${contactName.value}</p> <p><strong>Sender Email:</strong> ${contactMail.value}</p> <p><strong>Regarding:</strong> ${contactInfo.value}</p> <p><strong>Message: </strong>${contactMessage.value}</p>`,
+	// })
+    .then(
+		message => console.log(message)
+	).catch(
+        err => console.log(err)
+    );
+}
