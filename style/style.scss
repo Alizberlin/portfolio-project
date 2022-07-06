@@ -365,9 +365,13 @@ section{
             .progress-title{
                 text-transform: uppercase;
                 font-weight: 500;
+                position: relative;
                 .icon{
                     padding-left: 0.35rem;
                     font-size: larger;
+                    position: absolute;
+                    right: 1%;
+                    color: var(--color-white);
                 }
                 .html{
                     :hover{
@@ -424,50 +428,37 @@ section{
                     background-color: var(--color-grey-4);
                     margin-left: 1rem;
                     position: relative;
-                    ._90{
+                    .bar{
                         position: absolute;
                         top: 0;
                         left: 0;
                         height: 100%;
                         background-color: var(--color-secondary);
                         transition: all .4s ease-in-out;
+                    }
+                    ._90{
                         width: 90%;
                     }
                     ._85{
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        height: 100%;
-                        background-color: var(--color-secondary);
-                        transition: all .4s ease-in-out;
                         width: 85%;
                     }
                     ._80{
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        height: 100%;
-                        background-color: var(--color-secondary);
-                        transition: all .4s ease-in-out;
                         width: 80%;
                     }
                     ._75{
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        height: 100%;
-                        background-color: var(--color-secondary);
-                        transition: all .4s ease-in-out;
                         width: 75%;
                     }
                     ._50{
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        height: 100%;
-                        background-color: var(--color-secondary);
-                        transition: all .4s ease-in-out;
                         width: 50%;
+                    }
+                    ._35{
+                        width: 35%;
+                    }
+                    ._30{
+                        width: 30%;
+                    }
+                    ._20{
+                        width: 20%;
                     }
                 }
             }

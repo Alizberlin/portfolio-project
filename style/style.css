@@ -492,11 +492,15 @@ section {
 .about-stats .progress-bars .progress-bar .progress-title {
   text-transform: uppercase;
   font-weight: 500;
+  position: relative;
 }
 
 .about-stats .progress-bars .progress-bar .progress-title .icon {
   padding-left: 0.35rem;
   font-size: larger;
+  position: absolute;
+  right: 1%;
+  color: var(--color-white);
 }
 
 .about-stats .progress-bars .progress-bar .progress-title .html :hover {
@@ -562,7 +566,7 @@ section {
   position: relative;
 }
 
-.about-stats .progress-bars .progress-bar .progress-con .progress ._90 {
+.about-stats .progress-bars .progress-bar .progress-con .progress .bar {
   position: absolute;
   top: 0;
   left: 0;
@@ -570,51 +574,38 @@ section {
   background-color: var(--color-secondary);
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
+}
+
+.about-stats .progress-bars .progress-bar .progress-con .progress ._90 {
   width: 90%;
 }
 
 .about-stats .progress-bars .progress-bar .progress-con .progress ._85 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background-color: var(--color-secondary);
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
   width: 85%;
 }
 
 .about-stats .progress-bars .progress-bar .progress-con .progress ._80 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background-color: var(--color-secondary);
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
   width: 80%;
 }
 
 .about-stats .progress-bars .progress-bar .progress-con .progress ._75 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background-color: var(--color-secondary);
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
   width: 75%;
 }
 
 .about-stats .progress-bars .progress-bar .progress-con .progress ._50 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background-color: var(--color-secondary);
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
   width: 50%;
+}
+
+.about-stats .progress-bars .progress-bar .progress-con .progress ._35 {
+  width: 35%;
+}
+
+.about-stats .progress-bars .progress-bar .progress-con .progress ._30 {
+  width: 30%;
+}
+
+.about-stats .progress-bars .progress-bar .progress-con .progress ._20 {
+  width: 20%;
 }
 
 .about-stats .stat-title {

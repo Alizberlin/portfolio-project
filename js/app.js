@@ -4,6 +4,7 @@ const secBtn = document.querySelectorAll('.control');
 const allSections = document.querySelector('.main-content');
 const controls = document.querySelector('.controls');
 const contactBtn = document.querySelector('.contact-me-btn');
+const getInTouch = document.querySelector('.get-in-touch');
 const contactPage = document.querySelector('.contact');
 const contactMail = document.querySelector('#c-email');
 const contactName = document.querySelector('#c-name');
@@ -84,6 +85,11 @@ menu.addEventListener('click', ()=> {
 
 // contact me button
 contactBtn.addEventListener('click', ()=> {
+
+    contactPage.classList.add('active');
+
+})
+getInTouch.addEventListener('click', ()=> {
 
     contactPage.classList.add('active');
 
